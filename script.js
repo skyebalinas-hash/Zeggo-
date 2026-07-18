@@ -11,8 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Display all featured properties
+    // Detect current page
+const currentPage = window.location.pathname.split("/").pop();
+
+// Homepage = only 3 featured listings
+if (currentPage === "index.html" || currentPage === "") {
+
+    displayProperties(properties.slice(0, 3));
+
+}
+
+// Properties page = show everything
+else if (currentPage === "properties.html") {
+
     displayProperties(properties);
+
+}
+
+// Other pages = don't display anything
+else {
+
+    return;
+
+}
 
     // Search Button
     const searchButton = document.getElementById("searchBtn");
