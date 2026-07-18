@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Properties | Zeggo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+
+        <a href="index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Zeggo</span>
+
+        </a>
+
+    </div>
+
+    <nav class="navbar">
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="#">Buy</a></li>
+
+            <li><a href="#">Rent</a></li>
+
+            <li><a href="#">Sell</a></li>
+
+            <li><a href="agents.html">Agents</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="sign-in-btn">
+
+            Sign In
+
+        </button>
+
+    </div>
+
+</header>
+
+<main>
+
+<section class="featured">
+
+<div class="section-header">
+
+<h1>Browse Properties</h1>
+
+<p>Find homes, condos, apartments, townhouses and lots.</p>
+
+</div>
+
+<div class="search-container">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search by city, address or property name">
+
+</div>
+
+<div class="filter-row">
+
+<select id="statusFilter">
+
+<option value="all">Buy or Rent</option>
+
+<option value="sale">For Sale</option>
+
+<option value="rent">For Rent</option>
+
+</select>
+
+<select id="priceFilter">
+
+<option value="all">Price</option>
+
+<option value="1000000">Up to ₱1M</option>
+
+<option value="3000000">Up to ₱3M</option>
+
+<option value="5000000">Up to ₱5M</option>
+
+<option value="10000000">₱10M+</option>
+
+</select>
+
+<select id="bedFilter">
+
+<option value="all">Beds</option>
+
+<option value="1">1+</option>
+
+<option value="2">2+</option>
+
+<option value="3">3+</option>
+
+<option value="4">4+</option>
+
+<option value="5">5+</option>
+
+</select>
+
+<select id="typeFilter">
+
+<option value="all">Property Type</option>
+
+<option value="House">House</option>
+
+<option value="Condo">Condo</option>
+
+<option value="Apartment">Apartment</option>
+
+<option value="Townhouse">Townhouse</option>
+
+<option value="Lot">Lot</option>
+
+</select>
+
+<button class="filter-btn">
+
+<i class="fa-solid fa-sliders"></i>
+
+Filters
+
+</button>
+
+<button id="searchBtn" class="search-btn">
+
+Search
+
+</button>
+
+</div>
+
+</div>
+
+<br><br>
+
+<div
+id="featuredProperties"
+class="property-grid">
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Zeggo. All rights reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="properties.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
