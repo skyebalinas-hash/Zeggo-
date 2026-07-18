@@ -1238,3 +1238,67 @@ ul{
     }
 
 }
+
+/* ==========================================
+   SEARCH SUGGESTIONS
+========================================== */
+
+.search-container{
+
+    position:relative;
+
+}
+
+.search-suggestions{
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+    width:100%;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+    margin-top:8px;
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:1000;
+
+}
+
+.search-suggestion{
+
+    padding:14px 18px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.2s;
+
+}
+
+.search-suggestion:hover{
+
+    background:#f5f7fa;
+
+}
+
+.search-suggestion i{
+
+    color:#2563eb;
+
+}
