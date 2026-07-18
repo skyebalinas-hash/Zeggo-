@@ -244,5 +244,95 @@ function filterProperties() {
 
     displayProperties(filtered);
 
-}
+/* ==========================================
+   SEARCH SUGGESTIONS
+========================================== */
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const searchInput = document.getElementById("searchInput");
+    const suggestionsBox = document.getElementById("searchSuggestions");
+
+    if (!searchInput || !suggestionsBox || typeof properties === "undefined") {
+        return;
+    }
+
+    searchInput.addEventListener("input", () => {
+
+        const keyword = searchInput.value.trim().toLowerCase();
+
+        suggestionsBox.innerHTML = "";
+
+        if (keyword.length < 2) {
+
+            suggestionsBox.style.display = "none";
+
+            return;
+
+        }
+
+        const suggestions = [];
+
+        properties.forEach(property => {
+
+            [property.city, property.address, property.title].forEach(item => {
+
+                if (
+                    item.toLowerCase().includes(keyword) &&
+                    !suggestions.includes(item)
+                ) {
+
+                    suggestions.push(item);
+
+                }
+
+            });
+
+        });
+
+        if (suggestions.length === 0) {
+
+            suggestionsBox.style.display = "none";
+
+            return;
+
+        }
+
+        suggestions.slice(0, 6).forEach(item => {
+
+            const div = document.createElement("div");
+
+            div.className = "search-suggestion";
+
+            div.innerHTML = `
+                <i class="fa-solid fa-location-dot"></i>
+                ${item}
+            `;
+
+            div.addEventListener("click", () => {
+
+                searchInput.value = item;
+
+                suggestionsBox.style.display = "none";
+
+            });
+
+            suggestionsBox.appendChild(div);
+
+        });
+
+        suggestionsBox.style.display = "block";
+
+    });
+
+    document.addEventListener("click", (event) => {
+
+        if (!event.target.closest(".search-container")) {
+
+            suggestionsBox.style.display = "none";
+
+        }
+
+    });
+
+});
