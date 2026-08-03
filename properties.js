@@ -181,3 +181,23 @@ const properties = [
 }
 
 ];
+
+const featuredContainer = document.getElementById("featuredProperties");
+
+if (featuredContainer) {
+    properties.forEach(property => {
+        featuredContainer.innerHTML += `
+            <div class="property-card">
+                <img src="${property.image}" alt="${property.title}">
+                <div class="property-info">
+                    <h3>${property.title}</h3>
+                    <p>${property.address}</p>
+                    <p>${property.priceDisplay}</p>
+                    <a href="property.html?id=${property.id}" class="view-btn">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+}
