@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!propertyContainer || typeof properties === "undefined") {
         return;
-    
+    }
 
     // Detect current page
 const currentPage = window.location.pathname.split("/").pop();
