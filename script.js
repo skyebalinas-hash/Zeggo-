@@ -244,6 +244,8 @@ function filterProperties() {
 
     displayProperties(filtered);
 
+   }
+
 /* ==========================================
    SEARCH SUGGESTIONS
 ========================================== */
