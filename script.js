@@ -387,7 +387,10 @@ const description =
 
 const type =
     String(property.type || "").toLowerCase();
-
+           const features =
+    Array.isArray(property.features)
+        ? property.features.join(" ").toLowerCase()
+        : "";
 const matchesKeyword =
     keyword === "" ||
     title.includes(keyword) ||
@@ -396,7 +399,8 @@ const matchesKeyword =
     type.includes(keyword) ||
     category.includes(keyword) ||
     tags.includes(keyword) ||
-    description.includes(keyword);
+    description.includes(keyword) ||
+    features.includes(keyword);
 
             const matchesStatus =
                 status === "all" ||
