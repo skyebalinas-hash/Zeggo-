@@ -374,11 +374,29 @@ function filterProperties() {
             const address =
                 String(property.address || "").toLowerCase();
 
-            const matchesKeyword =
-                keyword === "" ||
-                title.includes(keyword) ||
-                city.includes(keyword) ||
-                address.includes(keyword);
+            const category =
+    String(property.category || "").toLowerCase();
+
+const tags =
+    Array.isArray(property.tags)
+        ? property.tags.join(" ").toLowerCase()
+        : "";
+
+const description =
+    String(property.description || "").toLowerCase();
+
+const type =
+    String(property.type || "").toLowerCase();
+
+const matchesKeyword =
+    keyword === "" ||
+    title.includes(keyword) ||
+    city.includes(keyword) ||
+    address.includes(keyword) ||
+    type.includes(keyword) ||
+    category.includes(keyword) ||
+    tags.includes(keyword) ||
+    description.includes(keyword);
 
             const matchesStatus =
                 status === "all" ||
