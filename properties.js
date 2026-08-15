@@ -16,14 +16,28 @@ const properties = [
             "family",
             "modern",
             "subdivision",
-            "residential"
+            "residential",
+            "peaceful",
+            "school",
+            "shopping"
         ],
         bedrooms: 3,
         bathrooms: 2,
         garage: 2,
         area: "180 sqm",
+        features: [
+            "2-car garage",
+            "modern kitchen",
+            "living room",
+            "dining area",
+            "garden",
+            "family room",
+            "near schools",
+            "near shopping centers",
+            "quiet neighborhood"
+        ],
         image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80",
-        description: "A spacious modern family home located in a peaceful neighborhood close to schools and shopping centers."
+        description: "A spacious modern family home in a peaceful residential neighborhood in Lahug, Cebu City. The property is ideal for families and is conveniently located near schools, shopping centers, restaurants, and other essential establishments."
     },
 
     {
@@ -42,14 +56,28 @@ const properties = [
             "luxury",
             "ocean",
             "modern",
-            "residential"
+            "residential",
+            "waterfront",
+            "vacation",
+            "investment"
         ],
         bedrooms: 2,
         bathrooms: 2,
         garage: 1,
         area: "120 sqm",
+        features: [
+            "ocean view",
+            "swimming pool",
+            "fitness center",
+            "24-hour security",
+            "parking",
+            "balcony",
+            "modern kitchen",
+            "beach access",
+            "resort amenities"
+        ],
         image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
-        description: "Luxury condominium with stunning ocean views and premium amenities."
+        description: "A luxury condominium in Mactan, Lapu-Lapu City featuring beautiful ocean views, modern interiors, premium amenities, and convenient access to beaches and resorts. Great for families, vacation homes, or property investment."
     },
 
     {
@@ -68,14 +96,27 @@ const properties = [
             "rental",
             "family",
             "student",
-            "residential"
+            "residential",
+            "budget",
+            "long-term"
         ],
         bedrooms: 2,
         bathrooms: 1,
         garage: 1,
         area: "75 sqm",
+        features: [
+            "2 bedrooms",
+            "1 bathroom",
+            "parking",
+            "living room",
+            "kitchen",
+            "near schools",
+            "near restaurants",
+            "quiet area",
+            "long-term rental"
+        ],
         image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
-        description: "Comfortable apartment perfect for students and small families."
+        description: "A comfortable and affordable apartment in Mandalagan, Bacolod. Perfect for students, young professionals, couples, and small families looking for a convenient long-term rental near schools, restaurants, and local establishments."
     },
 
     {
@@ -93,14 +134,28 @@ const properties = [
             "executive",
             "modern",
             "family",
-            "residential"
+            "residential",
+            "city",
+            "investment",
+            "spacious"
         ],
         bedrooms: 4,
         bathrooms: 3,
         garage: 2,
         area: "210 sqm",
+        features: [
+            "4 bedrooms",
+            "3 bathrooms",
+            "2-car garage",
+            "modern kitchen",
+            "spacious living room",
+            "dining area",
+            "balcony",
+            "storage room",
+            "modern finishes"
+        ],
         image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80",
-        description: "Elegant townhouse with spacious interiors and modern finishes."
+        description: "An elegant executive townhouse in Quezon City with spacious interiors, modern finishes, multiple bedrooms, and convenient parking. A great choice for large families and buyers looking for a comfortable city residence."
     },
 
     {
@@ -119,14 +174,26 @@ const properties = [
             "residential",
             "subdivision",
             "investment",
-            "building"
+            "building",
+            "property",
+            "development"
         ],
         bedrooms: 0,
         bathrooms: 0,
         garage: 0,
         area: "500 sqm",
+        features: [
+            "500 sqm lot",
+            "residential area",
+            "ideal for house",
+            "investment opportunity",
+            "building potential",
+            "accessible location",
+            "near establishments",
+            "quiet neighborhood"
+        ],
         image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
-        description: "Prime residential lot ideal for building your dream home."
+        description: "A prime 500 sqm residential lot located in Lanang, Davao. The property is ideal for building a family home, developing a private residence, or holding as a long-term real estate investment."
     },
 
     {
@@ -145,14 +212,29 @@ const properties = [
             "city",
             "rental",
             "IT Park",
-            "residential"
+            "residential",
+            "business",
+            "student",
+            "professional"
         ],
         bedrooms: 1,
         bathrooms: 1,
         garage: 1,
         area: "60 sqm",
+        features: [
+            "1 bedroom",
+            "1 bathroom",
+            "parking",
+            "modern kitchen",
+            "living area",
+            "city view",
+            "24-hour security",
+            "near restaurants",
+            "near offices",
+            "near shopping centers"
+        ],
         image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80",
-        description: "Modern condo located in the heart of Cebu IT Park."
+        description: "A modern one-bedroom condo located in Cebu IT Park. Perfect for professionals, students, and couples who want convenient access to offices, restaurants, shopping centers, entertainment, and public transportation."
     }
 
 ];
