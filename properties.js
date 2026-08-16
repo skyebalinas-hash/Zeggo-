@@ -586,3 +586,127 @@ const properties = [
 
 ];
 
+ id: 24,
+
+    title: "Affordable Townhouse Rental",
+
+    city: "Quezon City",
+
+    address: "Novaliches, Quezon City",
+
+    price: 30000,
+
+    priceDisplay: "₱30,000 / month",
+
+    status: "rent",
+
+    type: "Townhouse",
+
+    bedrooms: 3,
+
+    bathrooms: 2,
+
+    garage: 1,
+
+    area: "125 sqm",
+
+    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
+
+    description: "Comfortable townhouse rental with three bedrooms, a private garage, and convenient city access.",
+
+    category: "Townhouse Rental",
+
+    tags: ["townhouse", "rental", "family", "affordable", "city"]
+},
+
+
+];
+
+ id: 24,
+
+    title: "Affordable Townhouse Rental",
+
+    city: "Quezon City",
+
+    address: "Novaliches, Quezon City",
+
+    price: 30000,
+
+    priceDisplay: "₱30,000 / month",
+
+    status: "rent",
+
+    type: "Townhouse",
+
+    bedrooms: 3,
+
+    bathrooms: 2,
+
+    garage: 1,
+
+    area: "125 sqm",
+
+    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
+
+    description: "Comfortable townhouse rental with three bedrooms, a private garage, and convenient city access.",
+
+    category: "Townhouse Rental",
+
+    tags: ["townhouse", "rental", "family", "affordable", "city"]
+},
+
+
+];
+
+{
+    id: 25,
+
+    title: "Ready for Move-In House",
+
+    city: "Silay City",
+
+    address: "Near Magic Land, Silay City",
+
+    price: 1550000,
+
+    priceDisplay: "₱1,550,000 Promo",
+
+    originalPrice: 1750000,
+
+    promoDiscount: 200000,
+
+    status: "sale",
+
+    type: "House",
+
+    category: "Affordable Family Home",
+
+    bedrooms: 2,
+
+    bathrooms: 1,
+
+    garage: 0,
+
+    area: "49 sqm",
+
+    lotArea: "79 sqm",
+
+    image: "images/house25.jpg",
+
+    description: "Ready-for-move-in house near Magic Land, Silay City. Features 2 bedrooms, 1 toilet and bath, 49 sqm floor area, 79 sqm lot area, fence and gate, laundry area, floor tiles, and room divisions. Transfer of title is included.",
+
+    tags: [
+        "house",
+        "family",
+        "affordable",
+        "ready to move in",
+        "silay",
+        "silay city",
+        "2 bedrooms",
+        "near magic land",
+        "fenced",
+        "laundry area",
+        "lot",
+        "sale"
+    ]
+},
