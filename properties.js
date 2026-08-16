@@ -584,7 +584,7 @@ const properties = [
 },
 
 
-];
+
 
  id: 24,
 
@@ -708,7 +708,8 @@ const properties = [
         "laundry area",
         "lot",
         "sale"
-    ]
-},
+    }
+
+];
 
     
