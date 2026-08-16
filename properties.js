@@ -307,7 +307,7 @@ const properties = [
         image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
         tags: ["ocean", "view", "condo", "luxury", "modern", "investment"],
         description: "Stylish condominium with beautiful ocean views and convenient access to major areas of Cebu City."
-      }
+      },
 
    // keep your existing properties above
 
