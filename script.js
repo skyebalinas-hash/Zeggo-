@@ -318,9 +318,138 @@ function displayProperties(propertyList) {
 
 function filterProperties() {
 
-    if (typeof properties === "undefined") {
-        return;
+    const keyword =
+        document.getElementById("searchInput")?.value.toLowerCase().trim() || "";
+
+    const status =
+        document.getElementById("statusFilter")?.value || "all";
+
+    const type =
+        document.getElementById("typeFilter")?.value || "all";
+
+    const beds =
+        document.getElementById("bedFilter")?.value || "all";
+
+    const price =
+        document.getElementById("priceFilter")?.value || "all";
+
+
+    const filtered = properties.filter(property => {
+
+        /* ==========================================
+           SEARCH EVERYTHING
+        ========================================== */
+
+        const searchableText = [
+
+            property.title,
+            property.city,
+            property.address,
+            property.description,
+            property.type,
+            property.category,
+
+            ...(property.tags || [])
+
+        ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+
+        const matchesKeyword =
+            keyword === "" ||
+            searchableText.includes(keyword);
+
+
+        /* ==========================================
+           BUY / RENT
+        ========================================== */
+
+        const matchesStatus =
+            status === "all" ||
+            property.status === status;
+
+
+        /* ==========================================
+           PROPERTY TYPE
+        ========================================== */
+
+        const matchesType =
+            type === "all" ||
+            property.type.toLowerCase() === type.toLowerCase();
+
+
+        /* ==========================================
+           BEDROOMS
+        ========================================== */
+
+        const matchesBeds =
+            beds === "all" ||
+            property.bedrooms >= Number(beds);
+
+
+        /* ==========================================
+           PRICE
+        ========================================== */
+
+        let matchesPrice = true;
+
+        if (price !== "all") {
+
+            const selectedPrice = Number(price);
+
+            matchesPrice = property.price <= selectedPrice;
+
+        }
+
+
+        /* ==========================================
+           FINAL RESULT
+        ========================================== */
+
+        return (
+            matchesKeyword &&
+            matchesStatus &&
+            matchesType &&
+            matchesBeds &&
+            matchesPrice
+        );
+
+    });
+
+
+    /* ==========================================
+       DISPLAY RESULTS
+    ========================================== */
+
+    displayProperties(filtered);
+
+
+    /* ==========================================
+       NO RESULTS MESSAGE
+    ========================================== */
+
+    const container =
+        document.getElementById("featuredProperties");
+
+    if (container && filtered.length === 0) {
+
+        container.innerHTML = `
+            <div class="no-properties">
+                <i class="fa-solid fa-house-circle-xmark"></i>
+
+                <h3>No properties found</h3>
+
+                <p>
+                    Try changing your search or filters.
+                </p>
+            </div>
+        `;
+
     }
+
+}
 
     const searchElement =
         document.getElementById("searchInput");
