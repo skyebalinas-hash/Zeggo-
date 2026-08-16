@@ -60,3 +60,35 @@ document.addEventListener("click", function (event) {
     );
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const favorites =
+        JSON.parse(localStorage.getItem("zeggoFavorites")) || [];
+
+    document.querySelectorAll(".property-card").forEach(card => {
+
+        const detailsLink = card.querySelector(".view-details");
+
+        const favoriteButton = card.querySelector(".favorite-btn");
+
+        if (!detailsLink || !favoriteButton) {
+            return;
+        }
+
+        const url = new URL(detailsLink.href);
+
+        const propertyId = url.searchParams.get("id");
+
+        if (favorites.includes(propertyId)) {
+
+            favoriteButton.classList.add("active");
+
+            favoriteButton.innerHTML =
+                '<i class="fa-solid fa-heart"></i>';
+
+        }
+
+    });
+
+});
