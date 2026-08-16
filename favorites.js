@@ -34,7 +34,7 @@ document.addEventListener("click", function (event) {
     let favorites =
         JSON.parse(localStorage.getItem("zeggoFavorites")) || [];
 
-    if (favorites.includes(propertyId)) {
+    if (favorites.includes(String(propertyId))) {
 
         favorites = favorites.filter(id => id !== propertyId);
 
