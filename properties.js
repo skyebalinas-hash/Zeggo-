@@ -307,6 +307,282 @@ const properties = [
         image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
         tags: ["ocean", "view", "condo", "luxury", "modern", "investment"],
         description: "Stylish condominium with beautiful ocean views and convenient access to major areas of Cebu City."
-    }
+      }
+
+   // keep your existing properties above
+
+   {
+    id: 17,
+
+    title: "Elegant Family House",
+
+    city: "Iloilo City",
+
+    address: "Jaro, Iloilo City",
+
+    price: 4200000,
+
+    priceDisplay: "₱4,200,000",
+
+    status: "sale",
+
+    type: "House",
+
+    bedrooms: 4,
+
+    bathrooms: 3,
+
+    garage: 2,
+
+    area: "200 sqm",
+
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+
+    description: "A spacious four-bedroom family house with modern interiors, a large living area, and a peaceful residential setting.",
+
+    category: "Family Home",
+
+    tags: ["house", "family", "modern", "spacious", "luxury"]
+},
+
+{
+    id: 18,
+
+    title: "Cozy Rental House",
+
+    city: "Bacolod",
+
+    address: "Mansilingan, Bacolod City",
+
+    price: 25000,
+
+    priceDisplay: "₱25,000 / month",
+
+    status: "rent",
+
+    type: "House",
+
+    bedrooms: 3,
+
+    bathrooms: 2,
+
+    garage: 1,
+
+    area: "140 sqm",
+
+    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80",
+
+    description: "A comfortable three-bedroom rental house suitable for families looking for a quiet neighborhood.",
+
+    category: "Family Home",
+
+    tags: ["house", "family", "rental", "affordable", "spacious"]
+},
+
+{
+    id: 19,
+
+    title: "Luxury City Condo",
+
+    city: "Manila",
+
+    address: "Makati City",
+
+    price: 9500000,
+
+    priceDisplay: "₱9,500,000",
+
+    status: "sale",
+
+    type: "Condo",
+
+    bedrooms: 3,
+
+    bathrooms: 2,
+
+    garage: 1,
+
+    area: "135 sqm",
+
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
+
+    description: "Premium city condominium with elegant interiors, excellent views, and convenient access to business districts.",
+
+    category: "Luxury Condo",
+
+    tags: ["condo", "luxury", "modern", "city", "investment"]
+},
+
+{
+    id: 20,
+
+    title: "Affordable City Condo",
+
+    city: "Iloilo City",
+
+    address: "Mandurriao",
+
+    price: 28000,
+
+    priceDisplay: "₱28,000 / month",
+
+    status: "rent",
+
+    type: "Condo",
+
+    bedrooms: 2,
+
+    bathrooms: 2,
+
+    garage: 1,
+
+    area: "85 sqm",
+
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80",
+
+    description: "Modern two-bedroom condominium ideal for professionals, students, or small families.",
+
+    category: "City Condo",
+
+    tags: ["condo", "rental", "modern", "affordable", "city"]
+},
+
+{
+    id: 21,
+
+    title: "Student Apartment",
+
+    city: "Cebu City",
+
+    address: "Guadalupe, Cebu City",
+
+    price: 15000,
+
+    priceDisplay: "₱15,000 / month",
+
+    status: "rent",
+
+    type: "Apartment",
+
+    bedrooms: 2,
+
+    bathrooms: 1,
+
+    garage: 1,
+
+    area: "65 sqm",
+
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80",
+
+    description: "Affordable apartment close to schools, restaurants, and public transportation.",
+
+    category: "Student Apartment",
+
+    tags: ["apartment", "rental", "student", "affordable", "city"]
+},
+
+{
+    id: 22,
+
+    title: "Modern Apartment Suite",
+
+    city: "Davao City",
+
+    address: "Matina, Davao City",
+
+    price: 22000,
+
+    priceDisplay: "₱22,000 / month",
+
+    status: "rent",
+
+    type: "Apartment",
+
+    bedrooms: 3,
+
+    bathrooms: 2,
+
+    garage: 1,
+
+    area: "95 sqm",
+
+    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80",
+
+    description: "Bright modern apartment with three bedrooms and convenient access to shopping and dining areas.",
+
+    category: "Modern Apartment",
+
+    tags: ["apartment", "rental", "modern", "family", "spacious"]
+},
+
+{
+    id: 23,
+
+    title: "Premium Townhouse",
+
+    city: "Cebu City",
+
+    address: "Banilad, Cebu City",
+
+    price: 6800000,
+
+    priceDisplay: "₱6,800,000",
+
+    status: "sale",
+
+    type: "Townhouse",
+
+    bedrooms: 4,
+
+    bathrooms: 3,
+
+    garage: 2,
+
+    area: "190 sqm",
+
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+
+    description: "Stylish four-bedroom townhouse with spacious interiors, modern finishes, and secure parking.",
+
+    category: "Premium Townhouse",
+
+    tags: ["townhouse", "luxury", "modern", "family", "spacious"]
+},
+
+{
+    id: 24,
+
+    title: "Affordable Townhouse Rental",
+
+    city: "Quezon City",
+
+    address: "Novaliches, Quezon City",
+
+    price: 30000,
+
+    priceDisplay: "₱30,000 / month",
+
+    status: "rent",
+
+    type: "Townhouse",
+
+    bedrooms: 3,
+
+    bathrooms: 2,
+
+    garage: 1,
+
+    area: "125 sqm",
+
+    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
+
+    description: "Comfortable townhouse rental with three bedrooms, a private garage, and convenient city access.",
+
+    category: "Townhouse Rental",
+
+    tags: ["townhouse", "rental", "family", "affordable", "city"]
+},
+
 
 ];
+
