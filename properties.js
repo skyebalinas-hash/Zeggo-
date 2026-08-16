@@ -658,7 +658,6 @@ const properties = [
 
 ];
 
-{
     id: 25,
 
     title: "Ready for Move-In House",
