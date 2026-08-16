@@ -102,14 +102,18 @@ function displayProperties(list) {
             <div class="property-card">
 
                 <div class="property-image">
-
-                    <img
-                        src="${property.image}"
-                        alt="${property.title}"
-                    >
-
-                    <span class="property-status">
-
+           <img
+                src="${property.image}"
+                alt="${property.title}"
+           >
+           <button
+    class="favorite-btn"
+    type="button"
+    aria-label="Save property"
+>
+    <i class="fa-regular fa-heart"></i>
+</button>
+                      
                         ${
                             property.status === "sale"
                             ? "FOR SALE"
