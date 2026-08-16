@@ -6,12 +6,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     if (typeof properties === "undefined") {
+        console.error("Zeggo: properties.js was not loaded.");
         return;
     }
 
-    const propertyContainer = document.getElementById("featuredProperties");
+    const propertyContainer =
+        document.getElementById("featuredProperties");
 
-    const currentPage = window.location.pathname.split("/").pop();
+    const currentPage =
+        window.location.pathname.split("/").pop();
+
 
     /* ==========================================
        PROPERTY DISPLAY
@@ -19,11 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (propertyContainer) {
 
-        if (currentPage === "index.html" || currentPage === "") {
+        if (
+            currentPage === "index.html" ||
+            currentPage === ""
+        ) {
 
             displayProperties(properties.slice(0, 3));
 
-        } else if (currentPage === "properties.html") {
+        }
+
+        else if (currentPage === "properties.html") {
 
             displayProperties(properties);
 
@@ -31,23 +40,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
     /* ==========================================
        SEARCH BUTTON
     ========================================== */
 
-    const searchButton = document.getElementById("searchBtn");
+    const searchButton =
+        document.getElementById("searchBtn");
 
     if (searchButton) {
 
-        searchButton.addEventListener("click", filterProperties);
+        searchButton.addEventListener("click", () => {
+
+            filterProperties();
+
+        });
 
     }
 
+
     /* ==========================================
-       ENTER KEY SEARCH
+       ENTER KEY
     ========================================== */
 
-    const searchInput = document.getElementById("searchInput");
+    const searchInput =
+        document.getElementById("searchInput");
 
     if (searchInput) {
 
@@ -65,108 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
     /* ==========================================
-       SEARCH AUTOCOMPLETE
+       SEARCH SUGGESTIONS
     ========================================== */
 
-    const suggestionsBox =
-        document.getElementById("searchSuggestions");
-
-    if (searchInput && suggestionsBox) {
-
-        searchInput.addEventListener("input", () => {
-
-            const keyword =
-                searchInput.value.trim().toLowerCase();
-
-            suggestionsBox.innerHTML = "";
-
-            if (keyword.length < 2) {
-
-                suggestionsBox.style.display = "none";
-
-                return;
-
-            }
-
-            const suggestions = [];
-
-            properties.forEach(property => {
-
-                const searchableItems = [
-                    property.city,
-                    property.address,
-                    property.title
-                ];
-
-                searchableItems.forEach(item => {
-
-                    if (
-                        typeof item === "string" &&
-                        item.toLowerCase().includes(keyword) &&
-                        !suggestions.includes(item)
-                    ) {
-
-                        suggestions.push(item);
-
-                    }
-
-                });
-
-            });
-
-            if (suggestions.length === 0) {
-
-                suggestionsBox.style.display = "none";
-
-                return;
-
-            }
-
-            suggestions.slice(0, 6).forEach(item => {
-
-                const suggestion =
-                    document.createElement("div");
-
-                suggestion.className =
-                    "search-suggestion";
-
-                suggestion.innerHTML = `
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>${item}</span>
-                `;
-
-                suggestion.addEventListener("click", () => {
-
-                    searchInput.value = item;
-
-                    suggestionsBox.style.display = "none";
-
-                    filterProperties();
-
-                });
-
-                suggestionsBox.appendChild(suggestion);
-
-            });
-
-            suggestionsBox.style.display = "block";
-
-        });
-
-        /* Close suggestions when clicking elsewhere */
-
-        document.addEventListener("click", (event) => {
-
-            if (!event.target.closest(".search-container")) {
-
-                suggestionsBox.style.display = "none";
-
-            }
-
-        });
-
-    }
+    setupSearchSuggestions();
 
 });
 
@@ -184,20 +105,29 @@ function displayProperties(propertyList) {
         return;
     }
 
+
     container.innerHTML = "";
+
 
     if (!propertyList || propertyList.length === 0) {
 
         container.innerHTML = `
             <div class="no-properties">
+
+                <i class="fa-solid fa-house-circle-xmark"></i>
+
                 <h3>No properties found</h3>
-                <p>Try changing your search or filters.</p>
+
+                <p>
+                    Try changing your search or filters.
+                </p>
+
             </div>
         `;
 
         return;
-
     }
+
 
     propertyList.forEach(property => {
 
@@ -225,7 +155,6 @@ function displayProperties(propertyList) {
                     <button
                         class="favorite-btn"
                         type="button"
-                        aria-label="Add ${property.title} to favorites"
                     >
 
                         <i class="fa-regular fa-heart"></i>
@@ -233,6 +162,7 @@ function displayProperties(propertyList) {
                     </button>
 
                 </div>
+
 
                 <div class="property-content">
 
@@ -242,11 +172,13 @@ function displayProperties(propertyList) {
 
                     </div>
 
+
                     <h3 class="property-title">
 
                         ${property.title}
 
                     </h3>
+
 
                     <p class="property-location">
 
@@ -255,6 +187,7 @@ function displayProperties(propertyList) {
                         ${property.address}
 
                     </p>
+
 
                     <div class="property-details">
 
@@ -266,6 +199,7 @@ function displayProperties(propertyList) {
 
                         </span>
 
+
                         <span>
 
                             <i class="fa-solid fa-bath"></i>
@@ -274,6 +208,7 @@ function displayProperties(propertyList) {
 
                         </span>
 
+
                         <span>
 
                             <i class="fa-solid fa-car"></i>
@@ -281,6 +216,7 @@ function displayProperties(propertyList) {
                             ${property.garage}
 
                         </span>
+
 
                         <span>
 
@@ -291,6 +227,7 @@ function displayProperties(propertyList) {
                         </span>
 
                     </div>
+
 
                     <a
                         href="property.html?id=${property.id}"
@@ -318,257 +255,337 @@ function displayProperties(propertyList) {
 
 function filterProperties() {
 
-    const keyword =
-        document.getElementById("searchInput")?.value.toLowerCase().trim() || "";
+    if (typeof properties === "undefined") {
 
-    const status =
-        document.getElementById("statusFilter")?.value || "all";
+        console.error("Zeggo: properties is not available.");
 
-    const type =
-        document.getElementById("typeFilter")?.value || "all";
-
-    const beds =
-        document.getElementById("bedFilter")?.value || "all";
-
-    const price =
-        document.getElementById("priceFilter")?.value || "all";
-
-
-    const filtered = properties.filter(property => {
-
-        /* ==========================================
-           SEARCH EVERYTHING
-        ========================================== */
-
-        const searchableText = [
-
-            property.title,
-            property.city,
-            property.address,
-            property.description,
-            property.type,
-            property.category,
-
-            ...(property.tags || [])
-
-        ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
-
-
-        const matchesKeyword =
-            keyword === "" ||
-            searchableText.includes(keyword);
-
-
-        /* ==========================================
-           BUY / RENT
-        ========================================== */
-
-        const matchesStatus =
-            status === "all" ||
-            property.status === status;
-
-
-        /* ==========================================
-           PROPERTY TYPE
-        ========================================== */
-
-        const matchesType =
-            type === "all" ||
-            property.type.toLowerCase() === type.toLowerCase();
-
-
-        /* ==========================================
-           BEDROOMS
-        ========================================== */
-
-        const matchesBeds =
-            beds === "all" ||
-            property.bedrooms >= Number(beds);
-
-
-        /* ==========================================
-           PRICE
-        ========================================== */
-
-        let matchesPrice = true;
-
-        if (price !== "all") {
-
-            const selectedPrice = Number(price);
-
-            matchesPrice = property.price <= selectedPrice;
-
-        }
-
-
-        /* ==========================================
-           FINAL RESULT
-        ========================================== */
-
-        return (
-            matchesKeyword &&
-            matchesStatus &&
-            matchesType &&
-            matchesBeds &&
-            matchesPrice
-        );
-
-    });
-
-
-    /* ==========================================
-       DISPLAY RESULTS
-    ========================================== */
-
-    displayProperties(filtered);
-
-
-    /* ==========================================
-       NO RESULTS MESSAGE
-    ========================================== */
-
-    const container =
-        document.getElementById("featuredProperties");
-
-    if (container && filtered.length === 0) {
-
-        container.innerHTML = `
-            <div class="no-properties">
-                <i class="fa-solid fa-house-circle-xmark"></i>
-
-                <h3>No properties found</h3>
-
-                <p>
-                    Try changing your search or filters.
-                </p>
-            </div>
-        `;
+        return;
 
     }
 
-}
 
     const searchElement =
         document.getElementById("searchInput");
-
-    const statusElement =
-        document.getElementById("statusFilter");
-
-    const typeElement =
-        document.getElementById("typeFilter");
-
-    const bedsElement =
-        document.getElementById("bedFilter");
-
-    const priceElement =
-        document.getElementById("priceFilter");
 
     const keyword =
         searchElement
             ? searchElement.value.toLowerCase().trim()
             : "";
 
+
+    const statusElement =
+        document.getElementById("statusFilter");
+
     const status =
         statusElement
             ? statusElement.value
             : "all";
+
+
+    const typeElement =
+        document.getElementById("typeFilter");
 
     const type =
         typeElement
             ? typeElement.value
             : "all";
 
+
+    const bedsElement =
+        document.getElementById("bedFilter");
+
     const beds =
         bedsElement
             ? bedsElement.value
             : "all";
+
+
+    const priceElement =
+        document.getElementById("priceFilter");
 
     const price =
         priceElement
             ? priceElement.value
             : "all";
 
+
     const filtered =
         properties.filter(property => {
 
-            const title =
-                String(property.title || "").toLowerCase();
 
-            const city =
-                String(property.city || "").toLowerCase();
+            /* ==========================================
+               SEARCH ALL PROPERTY INFORMATION
+            ========================================== */
 
-            const address =
-                String(property.address || "").toLowerCase();
+            const searchableText = [
 
-            const category =
-    String(property.category || "").toLowerCase();
+                property.title,
 
-const tags =
-    Array.isArray(property.tags)
-        ? property.tags.join(" ").toLowerCase()
-        : "";
+                property.city,
 
-const description =
-    String(property.description || "").toLowerCase();
+                property.address,
 
-const type =
-    String(property.type || "").toLowerCase();
-           const features =
-    Array.isArray(property.features)
-        ? property.features.join(" ").toLowerCase()
-        : "";
-const matchesKeyword =
-    keyword === "" ||
-    title.includes(keyword) ||
-    city.includes(keyword) ||
-    address.includes(keyword) ||
-    type.includes(keyword) ||
-    category.includes(keyword) ||
-    tags.includes(keyword) ||
-    description.includes(keyword) ||
-    features.includes(keyword);
+                property.description,
+
+                property.type,
+
+                property.category,
+
+                ...(Array.isArray(property.tags)
+                    ? property.tags
+                    : [])
+
+            ]
+            .filter(Boolean)
+            .join(" ")
+            .toLowerCase();
+
+
+            const matchesKeyword =
+                keyword === "" ||
+                searchableText.includes(keyword);
+
+
+            /* ==========================================
+               SALE / RENT
+            ========================================== */
 
             const matchesStatus =
                 status === "all" ||
                 property.status === status;
 
+
+            /* ==========================================
+               PROPERTY TYPE
+            ========================================== */
+
             const matchesType =
                 type === "all" ||
-                property.type === type;
+                String(property.type).toLowerCase() ===
+                type.toLowerCase();
+
+
+            /* ==========================================
+               BEDROOMS
+            ========================================== */
 
             const matchesBeds =
                 beds === "all" ||
                 Number(property.bedrooms) >= Number(beds);
 
+
+            /* ==========================================
+               PRICE
+            ========================================== */
+
             let matchesPrice = true;
+
 
             if (price !== "all") {
 
-                const maxPrice = Number(price);
-
-                /*
-                    Rental prices are also compared numerically.
-                    This keeps the existing filter behavior intact.
-                */
+                const maximumPrice =
+                    Number(price);
 
                 matchesPrice =
-                    Number(property.price) <= maxPrice;
+                    Number(property.price) <= maximumPrice;
 
             }
 
+
+            /* ==========================================
+               FINAL MATCH
+            ========================================== */
+
             return (
+
                 matchesKeyword &&
+
                 matchesStatus &&
+
                 matchesType &&
+
                 matchesBeds &&
+
                 matchesPrice
+
             );
 
         });
 
+
     displayProperties(filtered);
+
+}
+
+
+/* ==========================================
+   SEARCH SUGGESTIONS
+========================================== */
+
+function setupSearchSuggestions() {
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const suggestionsBox =
+        document.getElementById("searchSuggestions");
+
+
+    if (
+        !searchInput ||
+        !suggestionsBox ||
+        typeof properties === "undefined"
+    ) {
+
+        return;
+
+    }
+
+
+    searchInput.addEventListener("input", () => {
+
+        const keyword =
+            searchInput.value
+                .toLowerCase()
+                .trim();
+
+
+        suggestionsBox.innerHTML = "";
+
+
+        if (keyword.length < 2) {
+
+            suggestionsBox.style.display = "none";
+
+            return;
+
+        }
+
+
+        const suggestions = [];
+
+
+        properties.forEach(property => {
+
+
+            const items = [
+
+                property.title,
+
+                property.city,
+
+                property.address,
+
+                property.type,
+
+                property.category,
+
+                ...(Array.isArray(property.tags)
+                    ? property.tags
+                    : [])
+
+            ];
+
+
+            items.forEach(item => {
+
+                if (!item) {
+                    return;
+                }
+
+
+                const text =
+                    String(item);
+
+
+                if (
+                    text
+                        .toLowerCase()
+                        .includes(keyword) &&
+                    !suggestions.includes(text)
+                ) {
+
+                    suggestions.push(text);
+
+                }
+
+            });
+
+        });
+
+
+        if (suggestions.length === 0) {
+
+            suggestionsBox.style.display = "none";
+
+            return;
+
+        }
+
+
+        suggestions
+            .slice(0, 6)
+            .forEach(item => {
+
+                const suggestion =
+                    document.createElement("div");
+
+
+                suggestion.className =
+                    "search-suggestion";
+
+
+                suggestion.innerHTML = `
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <span>${item}</span>
+
+                `;
+
+
+                suggestion.addEventListener(
+                    "click",
+                    () => {
+
+                        searchInput.value = item;
+
+                        suggestionsBox.style.display =
+                            "none";
+
+                        filterProperties();
+
+                    }
+                );
+
+
+                suggestionsBox.appendChild(
+                    suggestion
+                );
+
+            });
+
+
+        suggestionsBox.style.display = "block";
+
+    });
+
+
+    /* ==========================================
+       CLOSE SUGGESTIONS
+    ========================================== */
+
+    document.addEventListener("click", event => {
+
+        if (
+            !event.target.closest(".search-container")
+        ) {
+
+            suggestionsBox.style.display =
+                "none";
+
+        }
+
+    });
 
 }
