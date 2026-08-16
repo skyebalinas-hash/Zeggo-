@@ -1,3 +1,8 @@
+/* ==========================================
+   ZEGGO
+   PROPERTY DATABASE
+========================================== */
+
 const properties = [
 
     {
@@ -10,34 +15,13 @@ const properties = [
         status: "sale",
         type: "House",
         category: "Residential",
-        tags: [
-            "house",
-            "home",
-            "family",
-            "modern",
-            "subdivision",
-            "residential",
-            "peaceful",
-            "school",
-            "shopping"
-        ],
         bedrooms: 3,
         bathrooms: 2,
         garage: 2,
         area: "180 sqm",
-        features: [
-            "2-car garage",
-            "modern kitchen",
-            "living room",
-            "dining area",
-            "garden",
-            "family room",
-            "near schools",
-            "near shopping centers",
-            "quiet neighborhood"
-        ],
         image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80",
-        description: "A spacious modern family home in a peaceful residential neighborhood in Lahug, Cebu City. The property is ideal for families and is conveniently located near schools, shopping centers, restaurants, and other essential establishments."
+        tags: ["modern", "family", "residential", "house", "home"],
+        description: "A spacious modern family home located in a peaceful neighborhood close to schools and shopping centers."
     },
 
     {
@@ -49,74 +33,33 @@ const properties = [
         priceDisplay: "₱8,200,000",
         status: "sale",
         type: "Condo",
-        category: "Residential",
-        tags: [
-            "condo",
-            "beach",
-            "luxury",
-            "ocean",
-            "modern",
-            "residential",
-            "waterfront",
-            "vacation",
-            "investment"
-        ],
+        category: "Luxury",
         bedrooms: 2,
         bathrooms: 2,
         garage: 1,
         area: "120 sqm",
-        features: [
-            "ocean view",
-            "swimming pool",
-            "fitness center",
-            "24-hour security",
-            "parking",
-            "balcony",
-            "modern kitchen",
-            "beach access",
-            "resort amenities"
-        ],
         image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
-        description: "A luxury condominium in Mactan, Lapu-Lapu City featuring beautiful ocean views, modern interiors, premium amenities, and convenient access to beaches and resorts. Great for families, vacation homes, or property investment."
+        tags: ["luxury", "beach", "ocean", "condo", "modern", "vacation"],
+        description: "Luxury condominium with stunning ocean views and premium amenities."
     },
 
     {
         id: 3,
         title: "Affordable Apartment",
         city: "Bacolod",
-        address: "Mandalagan",
+        address: "Mandalagan, Bacolod City",
         price: 18000,
         priceDisplay: "₱18,000 / month",
         status: "rent",
         type: "Apartment",
-        category: "Residential",
-        tags: [
-            "apartment",
-            "affordable",
-            "rental",
-            "family",
-            "student",
-            "residential",
-            "budget",
-            "long-term"
-        ],
+        category: "Affordable",
         bedrooms: 2,
         bathrooms: 1,
         garage: 1,
         area: "75 sqm",
-        features: [
-            "2 bedrooms",
-            "1 bathroom",
-            "parking",
-            "living room",
-            "kitchen",
-            "near schools",
-            "near restaurants",
-            "quiet area",
-            "long-term rental"
-        ],
         image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
-        description: "A comfortable and affordable apartment in Mandalagan, Bacolod. Perfect for students, young professionals, couples, and small families looking for a convenient long-term rental near schools, restaurants, and local establishments."
+        tags: ["affordable", "apartment", "rental", "student", "family"],
+        description: "Comfortable and affordable apartment perfect for students, young professionals, and small families."
     },
 
     {
@@ -129,112 +72,241 @@ const properties = [
         status: "sale",
         type: "Townhouse",
         category: "Residential",
-        tags: [
-            "townhouse",
-            "executive",
-            "modern",
-            "family",
-            "residential",
-            "city",
-            "investment",
-            "spacious"
-        ],
         bedrooms: 4,
         bathrooms: 3,
         garage: 2,
         area: "210 sqm",
-        features: [
-            "4 bedrooms",
-            "3 bathrooms",
-            "2-car garage",
-            "modern kitchen",
-            "spacious living room",
-            "dining area",
-            "balcony",
-            "storage room",
-            "modern finishes"
-        ],
         image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80",
-        description: "An elegant executive townhouse in Quezon City with spacious interiors, modern finishes, multiple bedrooms, and convenient parking. A great choice for large families and buyers looking for a comfortable city residence."
+        tags: ["executive", "townhouse", "modern", "family", "residential"],
+        description: "Elegant townhouse with spacious interiors, modern finishes, and plenty of room for a growing family."
     },
 
     {
         id: 5,
         title: "Residential Lot",
         city: "Davao",
-        address: "Lanang",
+        address: "Lanang, Davao City",
         price: 3000000,
         priceDisplay: "₱3,000,000",
         status: "sale",
         type: "Lot",
-        category: "Land",
-        tags: [
-            "lot",
-            "land",
-            "residential",
-            "subdivision",
-            "investment",
-            "building",
-            "property",
-            "development"
-        ],
+        category: "Residential Lot",
         bedrooms: 0,
         bathrooms: 0,
         garage: 0,
         area: "500 sqm",
-        features: [
-            "500 sqm lot",
-            "residential area",
-            "ideal for house",
-            "investment opportunity",
-            "building potential",
-            "accessible location",
-            "near establishments",
-            "quiet neighborhood"
-        ],
         image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
-        description: "A prime 500 sqm residential lot located in Lanang, Davao. The property is ideal for building a family home, developing a private residence, or holding as a long-term real estate investment."
+        tags: ["lot", "residential", "investment", "land", "building"],
+        description: "Prime residential lot ideal for building a dream home or making a long-term property investment."
     },
 
     {
         id: 6,
         title: "Modern City Condo",
         city: "Cebu City",
-        address: "IT Park",
+        address: "IT Park, Cebu City",
         price: 35000,
         priceDisplay: "₱35,000 / month",
         status: "rent",
         type: "Condo",
-        category: "Residential",
-        tags: [
-            "condo",
-            "modern",
-            "city",
-            "rental",
-            "IT Park",
-            "residential",
-            "business",
-            "student",
-            "professional"
-        ],
+        category: "City Living",
         bedrooms: 1,
         bathrooms: 1,
         garage: 1,
         area: "60 sqm",
-        features: [
-            "1 bedroom",
-            "1 bathroom",
-            "parking",
-            "modern kitchen",
-            "living area",
-            "city view",
-            "24-hour security",
-            "near restaurants",
-            "near offices",
-            "near shopping centers"
-        ],
         image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80",
-        description: "A modern one-bedroom condo located in Cebu IT Park. Perfect for professionals, students, and couples who want convenient access to offices, restaurants, shopping centers, entertainment, and public transportation."
+        tags: ["modern", "condo", "city", "rental", "IT Park", "professional"],
+        description: "Modern condo located in the heart of Cebu IT Park, ideal for professionals and city living."
+    },
+
+    {
+        id: 7,
+        title: "Spacious Family Villa",
+        city: "Iloilo City",
+        address: "Jaro, Iloilo City",
+        price: 9800000,
+        priceDisplay: "₱9,800,000",
+        status: "sale",
+        type: "House",
+        category: "Luxury",
+        bedrooms: 5,
+        bathrooms: 4,
+        garage: 3,
+        area: "320 sqm",
+        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80",
+        tags: ["villa", "luxury", "family", "large", "house", "modern"],
+        description: "A spacious five-bedroom family villa with large living areas, multiple bathrooms, and generous parking."
+    },
+
+    {
+        id: 8,
+        title: "Affordable City Condo",
+        city: "Pasig",
+        address: "Ortigas Center, Pasig City",
+        price: 28000,
+        priceDisplay: "₱28,000 / month",
+        status: "rent",
+        type: "Condo",
+        category: "Affordable",
+        bedrooms: 1,
+        bathrooms: 1,
+        garage: 1,
+        area: "48 sqm",
+        image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+        tags: ["affordable", "condo", "rental", "city", "Ortigas"],
+        description: "Affordable city condominium near offices, restaurants, transportation, and shopping centers."
+    },
+
+    {
+        id: 9,
+        title: "Beachfront Family House",
+        city: "Lapu-Lapu City",
+        address: "Punta Engaño, Lapu-Lapu City",
+        price: 12500000,
+        priceDisplay: "₱12,500,000",
+        status: "sale",
+        type: "House",
+        category: "Beach Property",
+        bedrooms: 4,
+        bathrooms: 3,
+        garage: 2,
+        area: "260 sqm",
+        image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=900&q=80",
+        tags: ["beach", "beachfront", "ocean", "family", "luxury", "house"],
+        description: "Beautiful beachfront family home with relaxing surroundings and easy access to the sea."
+    },
+
+    {
+        id: 10,
+        title: "Starter Townhouse",
+        city: "Cavite",
+        address: "Imus, Cavite",
+        price: 4200000,
+        priceDisplay: "₱4,200,000",
+        status: "sale",
+        type: "Townhouse",
+        category: "Affordable",
+        bedrooms: 3,
+        bathrooms: 2,
+        garage: 1,
+        area: "110 sqm",
+        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+        tags: ["affordable", "townhouse", "starter", "family", "house"],
+        description: "Practical starter townhouse designed for young families looking for an affordable home."
+    },
+
+    {
+        id: 11,
+        title: "Premium Commercial Lot",
+        city: "Davao City",
+        address: "Matina, Davao City",
+        price: 15000000,
+        priceDisplay: "₱15,000,000",
+        status: "sale",
+        type: "Lot",
+        category: "Commercial Lot",
+        bedrooms: 0,
+        bathrooms: 0,
+        garage: 0,
+        area: "800 sqm",
+        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+        tags: ["commercial", "lot", "investment", "business", "land"],
+        description: "Large commercial lot suitable for a business establishment, commercial building, or long-term investment."
+    },
+
+    {
+        id: 12,
+        title: "Modern Makati Apartment",
+        city: "Makati",
+        address: "Poblacion, Makati City",
+        price: 45000,
+        priceDisplay: "₱45,000 / month",
+        status: "rent",
+        type: "Apartment",
+        category: "Premium Rental",
+        bedrooms: 2,
+        bathrooms: 2,
+        garage: 1,
+        area: "90 sqm",
+        image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80",
+        tags: ["modern", "apartment", "rental", "Makati", "premium", "city"],
+        description: "Modern apartment in Makati with convenient access to restaurants, offices, entertainment, and transportation."
+    },
+
+    {
+        id: 13,
+        title: "Large Farm Lot",
+        city: "Bacolod",
+        address: "Silay, Negros Occidental",
+        price: 6500000,
+        priceDisplay: "₱6,500,000",
+        status: "sale",
+        type: "Lot",
+        category: "Farm Lot",
+        bedrooms: 0,
+        bathrooms: 0,
+        garage: 0,
+        area: "2,000 sqm",
+        image: "https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=900&q=80",
+        tags: ["farm", "lot", "land", "investment", "agricultural", "large"],
+        description: "Large piece of land suitable for agricultural use, a private retreat, or a long-term land investment."
+    },
+
+    {
+        id: 14,
+        title: "Luxury Modern House",
+        city: "Quezon City",
+        address: "New Manila, Quezon City",
+        price: 18500000,
+        priceDisplay: "₱18,500,000",
+        status: "sale",
+        type: "House",
+        category: "Luxury",
+        bedrooms: 5,
+        bathrooms: 5,
+        garage: 3,
+        area: "400 sqm",
+        image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80",
+        tags: ["luxury", "modern", "house", "family", "premium", "large"],
+        description: "High-end modern residence with spacious interiors, premium finishes, multiple bedrooms, and large parking."
+    },
+
+    {
+        id: 15,
+        title: "Cozy Student Apartment",
+        city: "Cebu City",
+        address: "Banilad, Cebu City",
+        price: 15000,
+        priceDisplay: "₱15,000 / month",
+        status: "rent",
+        type: "Apartment",
+        category: "Affordable",
+        bedrooms: 1,
+        bathrooms: 1,
+        garage: 0,
+        area: "45 sqm",
+        image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80",
+        tags: ["student", "affordable", "apartment", "rental", "cozy"],
+        description: "Cozy and affordable apartment suitable for students or young professionals."
+    },
+
+    {
+        id: 16,
+        title: "Ocean View Condo",
+        city: "Cebu City",
+        address: "South Road Properties, Cebu City",
+        price: 6800000,
+        priceDisplay: "₱6,800,000",
+        status: "sale",
+        type: "Condo",
+        category: "Luxury",
+        bedrooms: 2,
+        bathrooms: 2,
+        garage: 1,
+        area: "105 sqm",
+        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
+        tags: ["ocean", "view", "condo", "luxury", "modern", "investment"],
+        description: "Stylish condominium with beautiful ocean views and convenient access to major areas of Cebu City."
     }
 
 ];
