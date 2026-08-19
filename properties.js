@@ -616,7 +616,7 @@ const properties = [
 
     lotArea: "79 sqm",
 
-    image: "images/house25.jpg",
+    image: "https://www.camella.com.ph/wp-content/uploads/2020/06/2016_Camella_Property-for-Sale_Camella_Bacolod-Gallery_1-758x500.jpg",
 
     description: "Ready-for-move-in house near Magic Land, Silay City. Features 2 bedrooms, 1 toilet and bath, 49 sqm floor area, 79 sqm lot area, fence and gate, laundry area, floor tiles, and room divisions. Transfer of title is included.",
 
