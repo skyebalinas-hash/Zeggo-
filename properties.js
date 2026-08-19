@@ -549,9 +549,8 @@ const properties = [
     tags: ["townhouse", "luxury", "modern", "family", "spacious"]
 },
 
-{
-    {
-    id: 24,
+{   
+   id: 24,
 
     title: "Affordable Townhouse Rental",
 
@@ -638,6 +637,6 @@ const properties = [
 }
 
 ];
-];
+
 
     
