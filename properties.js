@@ -550,6 +550,7 @@ const properties = [
 },
 
 {
+    {
     id: 24,
 
     title: "Affordable Townhouse Rental",
@@ -582,9 +583,6 @@ const properties = [
 
     tags: ["townhouse", "rental", "family", "affordable", "city"]
 },
-
-
-];
 
 {
     id: 25,
@@ -636,8 +634,10 @@ const properties = [
         "laundry area",
         "lot",
         "sale"
-    }
+    ]
+}
 
+];
 ];
 
     
