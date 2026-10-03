@@ -649,7 +649,7 @@ const properties = [
 
     priceDisplay: "₱2,350,000 Promo",
 
-    originalPrice:
+    originalPrice: "₱4,350,000",
 
     promoDiscount: 
 
