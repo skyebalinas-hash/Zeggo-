@@ -633,10 +633,63 @@ const properties = [
         "laundry area",
         "lot",
         "sale"
-    ]
-}
+ },
 
-];
+{
+
+  id: 26,
+
+    title: "Ready for Move-In House",
+
+    city: "bacolod city",
+
+    address: "NearCAMELLA SOUTH BACOLOD CITY,
+
+    price: 2,500,000,
+
+    priceDisplay: "₱2,350,000 Promo",
+
+    originalPrice:
+
+    promoDiscount: 
+
+    status: "sale",
+
+    type: "House",
+
+    category: "Affordable Family Home",
+
+    bedrooms: 2,
+
+    bathrooms: 1,
+
+    garage: 0,
+
+    area: "49 sqm",
+
+    lotArea: "79 sqm",
+
+    image: https://www.bacolodcityrealestate.com/uploads/4/6/1/7/4617249/editor/84296839-396147567889884-3840278306876293120-n.jpg?1585795291jpg",
+
+    description: "Camella Bacolod Sotuh. It’s more than just a place, it’s a Lifestyle! Subdivision Amenities: Gated exclusive communitY Club House Shutle BusSwimming poolChildren s parkPine Tree ParkBasketball court24 hour securityProfessional Property Management.",
+
+    tags: [
+        "house",
+        "family",
+        "affordable",
+        "ready to move in",
+        "silay",
+        "silay city",
+        "2 bedrooms",
+        "near magic land",
+        "fenced",
+        "laundry area",
+        "lot",
+        "sale"
+       },
+
+{
+
 
 
     
